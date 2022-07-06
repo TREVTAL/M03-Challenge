@@ -1,16 +1,16 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var p = document.createElement("p");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  // !!!! Quizas tenga que cambiar el orden del password text = password y la definicion de Var Passwordtext
-  passwordText.value = password;
   var passwordText = document.querySelector("#password");
+  
+  passwordText.value = password;
 };
 
 function generatePassword() {
-  window.alert("Thankyou for using my Password Generator!!!");
+  // window.alert("Thankyou for using my Password Generator!!!");
   var pwLength = prompt("Please select a length between 8 and 128 charecters for your password");
   if(pwLength<8 || pwLength>128) {
     window.alert("Your selection does not meet required length, please try again");
@@ -31,8 +31,7 @@ function generatePassword() {
   // ensure user has selected at least 1 char option
   if(!pwLower && !pwUpper && !pwNumeric && !pwSpecial) {
     window.alert("You need to select at least one character type");
-  } else {
-    window.alert("Thankyou for selecting at least one option");
+    return;
   };
 
   // if(pwLower) {
@@ -72,14 +71,18 @@ function generatePassword() {
   } else { d = c };
 
   console.log(d);
-  
-  for (var i = 0; i <= pwLength; i++) {
+  var passwordvalue = ""
+  for (var i = 0; i <= pwLength -1; i++) {
     var randomNumber = Math.floor(Math.random() * d.length);
-    password += d.substring(randomNumber, randomNumber +1);
+    passwordvalue += d.substring(randomNumber, randomNumber +1);
   };
 
-  console.log(password);
-  console.log("The confimed lenght of your password is " + password.length);
+  window.alert("Your password is:\n\n" +passwordvalue+ "\n\n Thankyou for using my Password Generator");
+
+  console.log(passwordvalue);
+  console.log("The confimed lenght of your password is" + passwordvalue.length);
+
+  writePassword;
 
   return;
 };
@@ -87,4 +90,7 @@ function generatePassword() {
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword());
+// generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
+
