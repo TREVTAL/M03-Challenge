@@ -20,4 +20,6 @@ Repository has several GIT Commits, following progress of challenge, have a desc
 
 ## Screenshot
 
-![Screenshot](https://github.com/TREVTAL/M02-Challenge/blob/main/assets/03-javascript-homework-demo.png?raw=true)
+![Screenshot](https://github.com/TREVTAL/M03-Challenge/blob/79ab845e37bc6b679bc5016292ff2ff975716faa/Assets/03-javascript-homework-demo.png)
+              
+              <!-- https://github.com/TREVTAL/M02-Challenge/blob/main/assets/03-javascript-homework-demo.png?raw=true -->
