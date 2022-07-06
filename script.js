@@ -33,7 +33,43 @@ function generatePassword() {
     window.alert("Thankyou for selecting at least one option");
   };
 
+  // if(pwLower) {
+  //   a1 = ["abcdefghijklmnopqrstuvwxyz"];
+  //   a = a1.split("");
+  // } else { a = [] };
+  // if(pwUpper){
+  //   upper1 = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+  //   upper = upper1.split("");
+  //   b = a.concat(upper);
+  // } else { b = a };
+  // if(pwNumeric) {
+  //   numeric1 = ["1234567890"];
+  //   numeric = numeric1.split("");
+  //   c = b.concat(numeric);
+  // } else { c = b};
+  // if(pwSpecial) {
+  //   special1 = ["!@#$%^&*()"];
+  //   special = special1.split("");
+  //   d = c.concat(special);
+  // } else { d = c };
+  
+  if(pwLower) {
+    a = "abcdefghijklmnopqrstuvwxyz";
+  } else { a = "" };
+  if(pwUpper){
+    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    b = a + upper;
+  } else { b = a };
+  if(pwNumeric) {
+    numeric = "1234567890";
+    c = b + numeric;
+  } else { c = b};
+  if(pwSpecial) {
+    special = "!@#$%^&*()";
+    d = c + special;
+  } else { d = c };
 
+  console.log(d);
   
   return;
 };
