@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var p = document.createElement("p");
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -10,7 +10,6 @@ function writePassword() {
 };
 
 function generatePassword() {
-  // window.alert("Thankyou for using my Password Generator!!!");
   var pwLength = prompt("Please select a length between 8 and 128 charecters for your password");
   if(pwLength<8 || pwLength>128) {
     window.alert("Your selection does not meet required length, please try again");
@@ -34,26 +33,7 @@ function generatePassword() {
     return;
   };
 
-  // if(pwLower) {
-  //   a1 = ["abcdefghijklmnopqrstuvwxyz"];
-  //   a = a1.split("");
-  // } else { a = [] };
-  // if(pwUpper){
-  //   upper1 = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-  //   upper = upper1.split("");
-  //   b = a.concat(upper);
-  // } else { b = a };
-  // if(pwNumeric) {
-  //   numeric1 = ["1234567890"];
-  //   numeric = numeric1.split("");
-  //   c = b.concat(numeric);
-  // } else { c = b};
-  // if(pwSpecial) {
-  //   special1 = ["!@#$%^&*()"];
-  //   special = special1.split("");
-  //   d = c.concat(special);
-  // } else { d = c };
-  
+//Password Generator=  
   if(pwLower) {
     var a = "abcdefghijklmnopqrstuvwxyz";
   } else { var a = "" };
@@ -71,7 +51,7 @@ function generatePassword() {
   } else { d = c };
 
   console.log(d);
-  var passwordvalue = ""
+  var passwordvalue = "";
   for (var i = 0; i <= pwLength -1; i++) {
     var randomNumber = Math.floor(Math.random() * d.length);
     passwordvalue += d.substring(randomNumber, randomNumber +1);
@@ -90,7 +70,5 @@ function generatePassword() {
 
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword());
-// generateBtn.addEventListener("click", writePassword);
 generateBtn.addEventListener("click", generatePassword);
 
