@@ -4,9 +4,9 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  // !!!! Quizas tenga que cambiar el orden del password text = password y la definicion de Var Passwordtext
   passwordText.value = password;
-// !!!! Quizas tenga que cambiar el orden del password text = password y la definicion de Var Passwordtext
+  var passwordText = document.querySelector("#password");
 };
 
 function generatePassword() {
@@ -17,16 +17,18 @@ function generatePassword() {
     generatePassword();
   };
 
-  var pwLower = window.confirm("Do you want to include lowercase character?");
-  var pwUpper = window.confirm("Do you want to include UPPERCASE character?");
-  var pwNumeric = window.confirm("Do you want to include Numeric character?");
-  var pwSpecial = window.confirm("Do you want to include Special character?");
+  var pwLower = window.confirm("Do you want to allow lowercase characters in your password?");
+  var pwUpper = window.confirm("Do you want to allow UPPERCASE characters in your password?");
+  var pwNumeric = window.confirm("Do you want to allow Numeric characters in your password?");
+  var pwSpecial = window.confirm("Do you want to allow Special characters in your password?");
 
+  // validate selections are saved
   // console.log(pwLower);
   // console.log(pwUpper);
   // console.log(pwNumeric);
   // console.log(pwSpecial);
 
+  // ensure user has selected at least 1 char option
   if(!pwLower && !pwUpper && !pwNumeric && !pwSpecial) {
     window.alert("You need to select at least one character type");
   } else {
@@ -54,23 +56,31 @@ function generatePassword() {
   // } else { d = c };
   
   if(pwLower) {
-    a = "abcdefghijklmnopqrstuvwxyz";
-  } else { a = "" };
+    var a = "abcdefghijklmnopqrstuvwxyz";
+  } else { var a = "" };
   if(pwUpper){
-    upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    b = a + upper;
+    var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var b = a + upper;
   } else { b = a };
   if(pwNumeric) {
-    numeric = "1234567890";
-    c = b + numeric;
+    var numeric = "1234567890";
+    var c = b + numeric;
   } else { c = b};
   if(pwSpecial) {
-    special = "!@#$%^&*()";
-    d = c + special;
+    var special = "!@#$%^&*()";
+    var d = c + special;
   } else { d = c };
 
   console.log(d);
   
+  for (var i = 0; i <= pwLength; i++) {
+    var randomNumber = Math.floor(Math.random() * d.length);
+    password += d.substring(randomNumber, randomNumber +1);
+  };
+
+  console.log(password);
+  console.log("The confimed lenght of your password is " + password.length);
+
   return;
 };
 
